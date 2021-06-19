@@ -1,0 +1,49 @@
+@import url(http://fonts.googleapis.com/css?family=Rokkitt);
+.h1{
+    font-family: 'Rokkitt', serif;
+    text-align: center;
+    color: cornsilk;
+    font-size: 35px;
+}
+.todoListContainer{
+    background-color: #000398;
+    border-radius: 19px;
+    width:  35%;
+    margin: auto;  
+    margin-top: 80px;
+    padding-top: 5px;
+    position: relative;
+}
+
+.todotask{
+    margin-left: 10%;
+    padding: 10px;
+    border-radius: 8px;
+    width: 60%;
+}
+
+.addTaskButton{
+   text-align: center;
+   border: 2px solid red;
+   padding: 9px;
+   border-radius: 8px;
+   color: #fff;
+   background-color: red;
+   cursor: pointer;
+}
+
+
+#todos{
+    color: #fff;
+    margin-left: 10%;
+}
+
+
+.remove{
+    background-color: khaki;
+    margin-left: 55%;
+    color: black;
+    padding: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+}
