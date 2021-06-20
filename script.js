@@ -13,22 +13,22 @@ function getTodos(params) {
 function add() {
     //get task from the input box
     var task = document.getElementById('task').value;
+    if (task === "" || task === undefined) {
+        html = "Task cannot be empty!";
+        document.getElementById('message').innerHTML = html;
+        return false;
+    }
+    
     //get all the todos from the localstorage and set on todos
     var todos = getTodos();
     //add the task on the todos 
     todos.push(task);
     //send the data to the local storage
     localStorage.setItem('todo', JSON.stringify(todos));
+    document.getElementById('message').innerHTML = "";
     console.log(localStorage);
     show();
     return false;
-}
-
-function clearDefault(a) {
-    //clear any task from the input if any
-    if (a.defaultValue == a.value) {
-        a.value = "";
-    }
 }
 
 function remove(){
@@ -49,6 +49,14 @@ function remove(){
 }
 
 
+function clearDefault(a) {
+    if (a !== "") {
+        a = "";
+        return a;
+    }
+    return false;
+}
+
 function show() {
     var todos = getTodos();
     var html = '<ul>';
@@ -56,14 +64,16 @@ function show() {
         html += '<li>' + todos[i] + '<button class="remove" id="'+ i + '"> Delete</button> </li>';
     }
     html += '</ul>';
-
+    var task = document.getElementById('task').value;
+    var clear = clearDefault(task);
+    document.getElementById('task').value = clear;
     document.getElementById('todos').innerHTML = html;
 
     var buttons = document.getElementsByClassName('remove');
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', remove);
     }
-
+    
 }
 
 show();

@@ -47,3 +47,8 @@
     border-radius: 8px;
     cursor: pointer;
 }
+
+#message{
+    color: yellow;
+    text-align: center;
+}
