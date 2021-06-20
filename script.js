@@ -54,7 +54,7 @@ function clearDefault(a) {
         a = "";
         return a;
     }
-    return false;
+    return "";
 }
 
 function show() {
