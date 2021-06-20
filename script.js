@@ -58,17 +58,22 @@ function clearDefault(a) {
 }
 
 function show() {
+    //get the list of the todo task from localstorage
     var todos = getTodos();
+
+    //dynamic template of lists of tasks to do injected
     var html = '<ul>';
     for (let i = 0; i < todos.length; i++) {
         html += '<li>' + todos[i] + '<button class="remove" id="'+ i + '"> Delete</button> </li>';
     }
     html += '</ul>';
+    
     var task = document.getElementById('task').value;
     var clear = clearDefault(task);
     document.getElementById('task').value = clear;
     document.getElementById('todos').innerHTML = html;
 
+    //remove each task onclick remove
     var buttons = document.getElementsByClassName('remove');
     for (let i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', remove);
